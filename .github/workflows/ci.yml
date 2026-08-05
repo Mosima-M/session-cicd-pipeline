@@ -7,5 +7,6 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest      # use a GitHub-hosted Ubuntu runner
     steps:
-      - run: echo "Hello from the pipeline!"
-      - run: echo "This ran on a GitHub runner, not my laptop."
+      - run: echo "about to fail on purpose"
+      - run: exit 1               # this forces a failure
+      - run: echo "you will NEVER see this line"
