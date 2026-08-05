@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tutorial</groupId>
@@ -25,6 +26,17 @@
 
     <build>
         <plugins>
+
+            <!-- Compile using Java 21 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+
             <!-- Runs the JUnit tests during `mvn test` -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -32,7 +44,7 @@
                 <version>3.2.5</version>
             </plugin>
 
-            <!-- Builds a runnable "fat" jar during `mvn package` -->
+            <!-- Builds a runnable fat JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -51,10 +63,14 @@
                     <execution>
                         <id>make-assembly</id>
                         <phase>package</phase>
-                        <goals><goal>single</goal></goals>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
