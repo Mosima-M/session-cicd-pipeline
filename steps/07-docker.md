@@ -18,7 +18,7 @@ docker run --rm calculator-app
 ```
 You should see the calculator demo print from inside a container. That's your app, packaged
 so it runs the same anywhere. ✅
-
+//windows command
 > Install Docker on your machine if you haven't — it's a core skill and many projects
 > require you to demo it locally.
 
